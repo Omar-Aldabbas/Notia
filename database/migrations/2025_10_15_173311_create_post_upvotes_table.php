@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('post_upvotes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('post_id')->constrained()->onDelete('cascade');
+            $table->unique(['post_id','user_id']);
             $table->timestamps();
         });
     }
