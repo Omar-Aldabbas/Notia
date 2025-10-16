@@ -1,36 +1,43 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'NOTIA: ART & LIFE')</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="{{ route('home') }}" class="logo">NOTIA</a>
+            <nav class="nav">
+                <a href="{{ route('home') }}">Home</a>
+                <a href="{{ route('posts.magazine') }}">Magazine</a>
+                <a href="{{ route('authors.index') }}">Authors</a>
+                <a href="{{ route('podcast') }}">Podcast</a>
+                @auth
+                    <a href="{{ route('profile.edit') }}">{{ auth()->user()->name }}</a>
+                    <form action="{{ route('logout') }}" method="POST" class="inline-form">
+                        @csrf
+                        <button type="submit" class="btn">Logout</button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}" class="btn">Login</a>
+                    <a href="{{ route('register') }}" class="btn">Register</a>
+                @endauth
+            </nav> 
         </div>
-    </body>
+    </header>
+
+    <main class="main">
+        @yield('content')
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; {{ date('Y') }} NOTIA. All rights reserved.</p>
+            <p>Art, Culture, Lifestyle & Ideas — Connect, Discover, Explore</p>
+        </div>
+    </footer>
+</body>
 </html>

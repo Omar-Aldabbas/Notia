@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -13,8 +14,30 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = Post::latest()->with('author')->paginate(10);
-        return view('posts.index', compact('posts'));
+        $featuredPost = Post::latest()->first();
+
+        $popularPosts = Post::orderBy('views_count', 'desc')->take(3)->get();
+
+        $recentPosts = Post::latest()->take(6)->get();
+
+        $topAuthors = User::withCount('posts')
+            ->withSum('posts', 'views_count')
+            ->orderByDesc('posts_sum_views_count')
+            ->take(6)
+            ->get();
+
+        return view('posts.index', compact(
+            'featuredPost',
+            'popularPosts',
+            'recentPosts',
+            'topAuthors'
+        ));
+    }
+
+    public function magazine()
+    {
+        $posts = Post::latest()->paginate(12);
+        return view('posts.magazine', compact('posts'));
     }
 
     public function show(Post $post)

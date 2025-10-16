@@ -15,6 +15,7 @@ use App\Http\Controllers\{
 };
 
 Route::get('/', [PostController::class, 'index'])->name('home');
+Route::get('/posts', [PostController::class, 'magazine'])->name('posts.magazine');
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
 Route::get('/authors', [AuthorController::class,'index'])->name('authors.index');

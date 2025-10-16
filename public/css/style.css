@@ -1,0 +1,627 @@
+body {
+    font-family: "Arial Black", "Arial", sans-serif;
+    color: #111;
+    background-color: #fff;
+    margin: 0;
+    line-height: 1.4;
+    padding: 0 20px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    backdrop-filter: blur(10px);
+    background: rgba(194, 178, 128, 0.85);
+    padding: 6px;
+}
+
+
+a {
+    color: #111;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.site-header {
+    background-color: #fff;
+    padding: 30px 0;
+    border-bottom: 1px solid #111;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 8px 4px;
+}
+
+.site-title {
+    font-size: 7rem;
+    font-weight: 900;
+    color: #111;
+    margin: 0;
+    letter-spacing: -3px;
+}
+
+.main-nav a {
+    margin-left: 40px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.inline-form {
+    display: inline;
+}
+
+.inline-form button {
+    background: none;
+    border: none;
+    color: #111;
+    cursor: pointer;
+    font: inherit;
+    margin-left: 20px;
+    font-weight: 700;
+}
+
+.site-main {
+    padding: 80px 0;
+}
+
+.site-footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.home-header {
+    text-align: left;
+    margin-bottom: 80px;
+    background-color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 50px 20px;
+    position: relative;
+}
+
+.home-header h1 {
+    font-size: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    /* border-top: 4px solid #111; */
+    padding-top: 10px;
+    margin: 0 0 30px 0;
+}
+
+.home-header p {
+    display: inline-block;
+    font-size: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    animation: scrollText 30s linear infinite;
+    letter-spacing: 4rem;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.intro-section {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 80px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #111;
+}
+
+.intro-left {
+    flex: 0 0 35%;
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #111;
+    line-height: 1.1;
+}
+
+.intro-right {
+    flex: 1;
+    font-size: 1rem;
+    color: #111;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.home-main {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.featured-post {
+    flex: 3;
+    background: #fff;
+    padding: 40px;
+}
+
+.featured-post img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.featured-content {
+    padding: 25px 0 0 0;
+}
+
+.featured-content h2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+.featured-content p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #111;
+}
+
+.featured-content .meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111;
+    margin-top: 15px;
+}
+
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.popular-articles {
+    background: #fff;
+    padding: 30px;
+}
+
+.popular-articles h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.popular-articles a {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.ad-box {
+    background: #c2b280;
+    padding: 40px 20px;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.recent-articles h3 {
+    font-weight: 900;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.articles-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.article-card {
+    flex: 1 1 calc(33% - 40px);
+    background: #fff;
+    padding: 30px;
+}
+
+.article-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.article-content h4 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+
+.article-content p {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #111;
+}
+
+.article-content .meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #111;
+    font-weight: 700;
+}
+
+.article-content .tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    background: #111;
+    color: #fff;
+    padding: 5px 12px;
+    font-weight: 900;
+}
+
+.btn {
+    display: inline-block;
+    background: #111;
+    color: #fff;
+    padding: 15px 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: #c2b280;
+    color: #fff;
+}
+
+.podcast-section h3,
+.top-authors h3 {
+    font-weight: 900;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.podcast-grid,
+.authors-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.podcast-card,
+.author-card {
+    flex: 1 1 calc(33% - 40px);
+    background: #fff;
+    padding: 30px;
+    text-align: center;
+}
+
+.podcast-image,
+.avatar-placeholder {
+    width: 100%;
+    height: 200px;
+    background: #f5f1eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.author-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 0;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 1024px) {
+    .home-main,
+    .intro-section {
+        flex-direction: column;
+    }
+    .article-card,
+    .podcast-card,
+    .author-card {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 5rem;
+    }
+    .main-nav a {
+        margin-left: 20px;
+        font-size: 1rem;
+    }
+    .article-card,
+    .podcast-card,
+    .author-card {
+        flex: 1 1 100%;
+    }
+    .intro-section {
+        flex-direction: column;
+    }
+    .intro-left {
+        font-size: 3rem;
+    }
+    .intro-right {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 20px 0;
+    }
+    .home-header h1 {
+        font-size: 5rem;
+    }
+    .home-header p {
+        font-size: 1.5rem;
+        letter-spacing: 2rem;
+    }
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+
+/* magazine */
+
+.magazine-header {
+    margin: 4rem 0 2rem 0;
+    text-align: left;
+}
+
+.magazine-header h1 {
+    font-size: 7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #111;
+    padding-top: 5px;
+    margin: 0;
+}
+
+.posts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #111;
+    border-top: 1px solid #111;
+    gap: 0;
+    min-height: 50vh;
+}
+
+.post-card {
+    flex: 1 1 calc(25% - 1px);
+    border: 1px solid #111;
+    text-decoration: none;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.post-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid #111;
+}
+
+.post-content {
+    padding: 20px;
+}
+
+.post-content h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.post-content p {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.post-tag {
+    display: inline-block;
+    background: #111;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.pagination {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .post-card {
+        flex: 1 1 calc(50% - 1px);
+    }
+}
+
+@media (max-width: 768px) {
+    .post-card {
+        flex: 1 1 100%;
+    }
+
+    .magazine-header h1 {
+      font-size: 3rem;
+    }
+}
+
+
+/* posts */
+
+.post-page {
+    max-width: 1400px;
+    margin: 4rem auto;
+    padding: 0 20px;
+}
+
+.post-main {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.post-image {
+    flex: 1 1 45%;
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid #111;
+}
+
+.post-body {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-body h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.author-card {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.author-card img, .avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    background: #f5f1eb;
+    object-fit: cover;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+}
+
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.post-sub-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.post-sub-images img {
+    width: 100%;
+    max-width: 200px;
+    border: 1px solid #111;
+}
+
+.post-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.btn {
+    background: #111;
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: #c2b280;
+    color: #fff;
+}
+
+.post-comments {
+    margin-top: 60px;
+}
+
+.post-comments h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.comment {
+    border-top: 1px solid #111;
+    padding: 15px 0;
+}
+
+.comment p {
+    margin: 10px 0;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
